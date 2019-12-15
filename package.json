@@ -4,11 +4,11 @@
   "description": "This package is for creating multiline password filed (Password Textarea).",
   "author": "https://github.com/MUmer01",
   "license": "MIT",
-  "repository": "https://github.com/MUmer01/multiline_password",
+  "repository": "https://github.com/MUmer01/password_textarea",
   "bugs": {
-    "url": "https://github.com/MUmer01/multiline_password/issues"
+    "url": "https://github.com/MUmer01/password_textarea/issues"
   },
-  "homepage": "https://github.com/MUmer01/multiline_password#readme",
+  "homepage": "https://github.com/MUmer01/password_textarea#readme",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
