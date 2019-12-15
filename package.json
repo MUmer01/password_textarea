@@ -1,5 +1,5 @@
 {
-  "name": "multiline_password",
+  "name": "password_textarea",
   "version": "1.0.0",
   "description": "This package is for creating multiline password filed (Password Textarea).",
   "author": "https://github.com/MUmer01",

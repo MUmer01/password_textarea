@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import PasswordArea from 'multiline_password'
+import PasswordArea from 'password_textarea'
 
 export default class App extends Component {
   state = {

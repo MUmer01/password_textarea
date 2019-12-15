@@ -1,6 +1,6 @@
 {
-  "short_name": "multiline_password",
-  "name": "multiline_password",
+  "short_name": "password_textarea",
+  "name": "password_textarea",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",

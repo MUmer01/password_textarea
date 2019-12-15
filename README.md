@@ -1,13 +1,13 @@
-# multiline_password
+# password_textarea
 
 > This package is for creating multiline password filed (Password Textarea).
 
-[![NPM](https://img.shields.io/npm/v/multiline_password.svg)](https://www.npmjs.com/package/multiline_password) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/password_textarea.svg)](https://www.npmjs.com/package/password_textarea) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save multiline_password
+npm install --save password_textarea
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save multiline_password
 ```jsx
 import React, { Component } from 'react'
 
-import PasswordArea from 'multiline_password'
+import PasswordArea from 'password_textarea'
 
 class Example extends Component {
   state = {
