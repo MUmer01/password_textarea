@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
+export default class passwordArea extends Component {
+  state = {
+    value: "",
+    start: "",
   }
-
   render() {
     const {
-      text,
-      color,
+      value,
+      id,
     } = this.props
 
     return (
-      <div style={{ color }}>
-        Example Component: {text}
-      </div>
+      <textarea
+      ></textarea>
     )
   }
 }
+PreviewTestData.propTypes = {
+  value: PropTypes.string,
+  id: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
+PreviewTestData.defaultProps = {
+  value: "",
+  id: "passwordTextarea",
+};
