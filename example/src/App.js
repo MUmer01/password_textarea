@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'multiline_password'
+import PasswordArea from 'multiline_password'
 
 export default class App extends Component {
+  state = {
+    value: `123
+234
+
+567`,
+  }
   render() {
+    console.log({ vvvvv: this.state.value });
     return (
       <div>
-        <ExampleComponent text='Modern React component module' color="red" />
+        <PasswordArea rows={10} value={this.state.value} onChange={(v) => { this.setState({ value: v }) }} />
       </div>
     )
   }
