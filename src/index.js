@@ -2,6 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 const separator = '×';
+const generateAsterik = (value) => {
+  let temp = [];
+  const splitVal = value.split(separator);
+  splitVal.forEach(val => {
+    let stars = "";
+    for (let i = 0; i < val.length; i++) {
+      stars = stars + '*';
+    }
+    temp.push(stars);
+  });
+  return temp.join(separator);
+}
 export default class passwordArea extends Component {
   state = {
     value: "",
@@ -10,22 +22,10 @@ export default class passwordArea extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       value: nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''),
-      stars: this.generateAsterik(nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''))
+      stars: generateAsterik(nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''))
     });
   }
 
-  generateAsterik = (value) => {
-    let temp = [];
-    const splitVal = value.split(separator);
-    splitVal.forEach(val => {
-      let stars = "";
-      for (let i = 0; i < val.length; i++) {
-        stars = stars + '*';
-      }
-      temp.push(stars);
-    });
-    return temp.join(separator);
-  }
   render() {
     const {
       id,
