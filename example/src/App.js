@@ -10,7 +10,6 @@ export default class App extends Component {
 567`,
   }
   render() {
-    console.log({ vvvvv: this.state.value });
     return (
       <div>
         <PasswordArea rows={10} value={this.state.value} onChange={(v) => { this.setState({ value: v }) }} />

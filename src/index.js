@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+let isKeyDown = false;
 const separator = '×';//Join/Split char -->×<-- (its not normal x its a special char)
 const generateAsterik = (value) => {
   let temp = [];
@@ -57,12 +58,8 @@ export default class PasswordArea extends Component {
   }
   updatePasswordText = (positionS, positionE, char) => {
     let tempVal = this.state.value;
-    console.log({ positionS, positionE })
-    console.log({ tempVal })
     tempVal = tempVal.substr(0, positionS) + char + tempVal.substr(positionE)
-    console.log({ tempVal })
     let value = tempVal.replace(RegExp(separator, 'g'), '\n');
-    console.log({ value })
     this.props.onChange(value);
     this.updatedValues(value, () => {
       this.setCaretPosition(positionS + char.length);
@@ -97,20 +94,23 @@ export default class PasswordArea extends Component {
         {...this.props}
         value={stars}
         onKeyPress={(e) => {
-          console.log('onKeyPress');
+          isKeyDown = true;
           this.handleEditPassword(e);
         }}
         onKeyDown={(e) => {
-          console.log('onKeyDown');
+          if (isKeyDown) {
+            this.setCaretPosition(e.target.selectionStart);
+          }
           const unicode = e.keyCode ? e.keyCode : e.charCode;
           if ((unicode == 8 || unicode == 46)) this.handleEditPassword(e, 'del');
         }}
+        onKeyUp={() => {
+          isKeyDown = false;
+        }}
         onPaste={(e) => {
-          console.log('onPaste');
           this.handleEditPassword(e, 'paste');
         }}
         onCut={(e) => {
-          console.log('onCut');
           this.handleEditPassword(e, 'cut');
         }}
         onChange={() => { }}
