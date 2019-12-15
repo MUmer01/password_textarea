@@ -15,15 +15,23 @@ npm install --save multiline_password
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'multiline_password'
+import PasswordArea from 'multiline_password'
 
 class Example extends Component {
-  render () {
+  state = {
+    value: 'test',
+  }
+  render() {
     return (
-      <MyComponent />
+      <PasswordArea 
+        id={"passwordTextarea"} //Optional
+        value={this.state.value} //Optional
+        onChange={(v) => { this.setState({ value: v }) }} //Required -> onChange function which return new value.
+      />
     )
   }
 }
+
 ```
 
 ## License
