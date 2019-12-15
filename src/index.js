@@ -5,12 +5,12 @@ const separator = '×';
 export default class passwordArea extends Component {
   state = {
     value: "",
-    start: "",
+    stars: "",
   }
   componentWillReceiveProps(nextProps) {
     this.setState({
       value: nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''),
-      start: this.generateAsterik(nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''))
+      stars: this.generateAsterik(nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''))
     });
   }
 
@@ -31,13 +31,13 @@ export default class passwordArea extends Component {
       id,
     } = this.props
     const {
-      start
+      stars
     } = this.state
 
     return (
       <textarea
         id={id}
-      >{start}</textarea>
+      >{stars}</textarea>
     )
   }
 }
