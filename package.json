@@ -5,6 +5,10 @@
   "author": "https://github.com/MUmer01",
   "license": "MIT",
   "repository": "https://github.com/MUmer01/multiline_password",
+  "bugs": {
+    "url": "https://github.com/MUmer01/multiline_password/issues"
+  },
+  "homepage": "https://github.com/MUmer01/multiline_password#readme",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
