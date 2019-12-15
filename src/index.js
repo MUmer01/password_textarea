@@ -7,6 +7,13 @@ export default class passwordArea extends Component {
     value: "",
     start: "",
   }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      value: nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''),
+      start: this.generateAsterik(nextProps.value.replace(/[\n]{1}/g, separator).replace(/[\r]{1}/g, ''))
+    });
+  }
+
   generateAsterik = (value) => {
     let temp = [];
     const splitVal = value.split(separator);
@@ -21,13 +28,16 @@ export default class passwordArea extends Component {
   }
   render() {
     const {
-      value,
       id,
     } = this.props
+    const {
+      start
+    } = this.state
 
     return (
       <textarea
-      ></textarea>
+        id={id}
+      >{start}</textarea>
     )
   }
 }
