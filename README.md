@@ -1,6 +1,6 @@
 # password_textarea
 
-> This package is for creating multiline password filed (Password Textarea).
+> This package is for creating multiline password field (Password Textarea).
 
 [![NPM](https://img.shields.io/npm/v/password_textarea.svg)](https://www.npmjs.com/package/password_textarea) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
