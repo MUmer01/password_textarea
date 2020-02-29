@@ -96,6 +96,7 @@ export default class PasswordArea extends Component {
         onKeyPress={(e) => {
           isKeyDown = true;
           this.handleEditPassword(e);
+          this.props.onKeyPress(e);
         }}
         onKeyDown={(e) => {
           if (isKeyDown) {
@@ -103,15 +104,19 @@ export default class PasswordArea extends Component {
           }
           const unicode = e.keyCode ? e.keyCode : e.charCode;
           if ((unicode == 8 || unicode == 46)) this.handleEditPassword(e, 'del');
+          this.props.onKeyDown(e);
         }}
-        onKeyUp={() => {
+        onKeyUp={(e) => {
           isKeyDown = false;
+          this.props.onKeyUp(e);
         }}
         onPaste={(e) => {
           this.handleEditPassword(e, 'paste');
+          this.props.onPaste(e);
         }}
         onCut={(e) => {
           this.handleEditPassword(e, 'cut');
+          this.props.onCut(e);
         }}
         onChange={() => { }}
       />
@@ -122,8 +127,18 @@ PasswordArea.propTypes = {
   value: PropTypes.string,
   id: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  onKeyPress: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  onKeyUp: PropTypes.func,
+  onPaste: PropTypes.func,
+  onCut: PropTypes.func
 };
 PasswordArea.defaultProps = {
   value: "",
   id: "passwordTextarea",
+  onKeyPress: () => {},
+  onKeyDown: () => {},
+  onKeyUp: () => {},
+  onPaste: () => {},
+  onCut: () => {}
 };
